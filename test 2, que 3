@@ -1,0 +1,19 @@
+def is_composite(num):
+    """
+    Returns True if the number is composite (i.e. not a prime number), False otherwise.
+    """
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return True
+    return False
+
+arr = [16, 18, 27, 16, 23, 21, 19]
+
+composite_count = 0
+for num in arr:
+    if is_composite(num):
+        composite_count += 1
+
+print("The number of composite numbers in the array is:", composite_count)
